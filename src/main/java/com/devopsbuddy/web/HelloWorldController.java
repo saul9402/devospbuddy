@@ -1,4 +1,5 @@
-package com.devopsbuddy.controllers;
+package com.devopsbuddy.web;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
