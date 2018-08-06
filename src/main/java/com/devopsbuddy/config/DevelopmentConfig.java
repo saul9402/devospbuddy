@@ -10,7 +10,7 @@ import com.devopsbuddy.backend.service.MockMailService;
 
 @Configuration
 @Profile("dev")
-@PropertySource("file:////${user.home}/devopsbudd/application-dev.properties")
+@PropertySource("file:////${user.home}/devopsbuddy/application-dev.properties")
 public class DevelopmentConfig {
 
 	@Bean
