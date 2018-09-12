@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -26,12 +28,16 @@ public class UserRole implements Serializable {
 	}
 
 	@Id
-	@ManyToOne(fetch = FetchType.LAZY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+
+//	@Id
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_id")
 	private User user;
 
-	@Id
-	@ManyToOne(fetch = FetchType.LAZY)
+//	@Id
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "role_id")
 	private Role role;
 
@@ -51,25 +57,12 @@ public class UserRole implements Serializable {
 		this.role = role;
 	}
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (o == null || getClass() != o.getClass())
-			return false;
-
-		UserRole userRole = (UserRole) o;
-
-		if (!user.equals(userRole.user))
-			return false;
-		return role.equals(userRole.role);
-
+	public long getId() {
+		return id;
 	}
 
-	@Override
-	public int hashCode() {
-		int result = user.hashCode();
-		result = 31 * result + role.hashCode();
-		return result;
+	public void setId(long id) {
+		this.id = id;
 	}
+
 }
