@@ -20,6 +20,9 @@ import com.devopsbuddy.backend.persistence.domain.backend.UserRole;
 import com.devopsbuddy.backend.persistence.repositories.PlanRepository;
 import com.devopsbuddy.backend.persistence.repositories.RoleRepository;
 import com.devopsbuddy.backend.persistence.repositories.UserRepository;
+import com.devopsbuddy.enums.PlansEnum;
+import com.devopsbuddy.enums.RolesEnum;
+import com.devopsbuddy.utils.UsersUtils;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
@@ -34,9 +37,9 @@ public class RepositoriesIntegration {
 	@Autowired
 	private UserRepository userRepository;
 
-	private static final int BASIC_PLAN_ID = 1;
+//	private static final int BASIC_PLAN_ID = 1;
 
-	private static final int BASIC_ROLE_ID = 1;
+//	private static final int BASIC_ROLE_ID = 1;
 
 	// se ejecuta antes de los test pata verificar que los repositorios no son nulos
 	@Before
@@ -48,30 +51,31 @@ public class RepositoriesIntegration {
 
 	@Test
 	public void testCreateNewPlan() throws Exception {
-		Plan basicPlan = createBasicPlan();
+		Plan basicPlan = createBasicPlan(PlansEnum.BASIC);
 		planRepository.save(basicPlan);
-		Plan retrievedPlan = planRepository.findOne(BASIC_PLAN_ID);
+		Plan retrievedPlan = planRepository.findOne(PlansEnum.BASIC.getId());
 		assertNotNull(retrievedPlan);
 	}
 
-	private Plan createBasicPlan() {
-		Plan plan = new Plan();
-		plan.setId(BASIC_PLAN_ID);
-		plan.setName("BASIC");
-		return plan;
+	private Plan createBasicPlan(PlansEnum plansEnum) {
+		return new Plan(plansEnum);
+//		Plan plan = new Plan();
+//		plan.setId(BASIC_PLAN_ID);
+//		plan.setName("BASIC");
+//		return plan;
 	}
 
 	@Test
 	public void createNewUser() throws Exception {
-		Plan basicPlan = createBasicPlan();
+		Plan basicPlan = createBasicPlan(PlansEnum.BASIC);
 		planRepository.save(basicPlan);
-		User basicUser = createBasicUser();
+		User basicUser = UsersUtils.createBasicUser();
 		basicUser.setPlan(basicPlan);
-		Role basicRole = createBasicRole();
+		Role basicRole = createBasicRole(RolesEnum.BASIC);
 		Set<UserRole> userRoles = new HashSet<>();
-		UserRole userRole = new UserRole();
-		userRole.setUser(basicUser);
-		userRole.setRole(basicRole);
+		UserRole userRole = new UserRole(basicUser, basicRole);
+//		userRole.setUser(basicUser);
+//		userRole.setRole(basicRole);
 		userRoles.add(userRole);
 		basicUser.getUserRoles().addAll(userRoles);
 		for (UserRole ur : userRoles) {
@@ -90,26 +94,27 @@ public class RepositoriesIntegration {
 		}
 	}
 
-	private Role createBasicRole() {
-		Role role = new Role();
-		role.setId(BASIC_ROLE_ID);
-		role.setName("ROLE_USER");
-		return role;
+	private Role createBasicRole(RolesEnum rolesEnum) {
+		return new Role(rolesEnum);
+//		Role role = new Role();
+//		role.setId(BASIC_ROLE_ID);
+//		role.setName("ROLE_USER");
+//		return role;
 	}
 
-	private User createBasicUser() {
-		User user = new User();
-		user.setUsername("basicUser");
-		user.setPassword("secret");
-		user.setEmail("me@example.com");
-		user.setFirstName("firstName");
-		user.setLastName("lastName");
-		user.setPhoneNumber("123456789123");
-		user.setCountry("GB");
-		user.setEnabled(true);
-		user.setDescription("A basic user");
-		user.setProfileImageUrl("https://blabla.images.com/basicuser");
-		return user;
-	}
+//	private User createBasicUser() {
+//		User user = new User();
+//		user.setUsername("basicUser");
+//		user.setPassword("secret");
+//		user.setEmail("me@example.com");
+//		user.setFirstName("firstName");
+//		user.setLastName("lastName");
+//		user.setPhoneNumber("123456789123");
+//		user.setCountry("GB");
+//		user.setEnabled(true);
+//		user.setDescription("A basic user");
+//		user.setProfileImageUrl("https://blabla.images.com/basicuser");
+//		return user;
+//	}
 
 }
