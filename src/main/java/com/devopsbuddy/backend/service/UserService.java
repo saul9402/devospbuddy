@@ -16,6 +16,7 @@ import com.devopsbuddy.backend.persistence.repositories.UserRepository;
 import com.devopsbuddy.enums.PlansEnum;
 
 @Service
+//se utiliza como buena practica para mejorar el performance de la aplicacion y evitar logs de más
 @Transactional(readOnly = true)
 public class UserService {
 
@@ -31,6 +32,7 @@ public class UserService {
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
 
+	//por defecto activa lectura y escritura de este metodo
 	@Transactional
 	public User createUser(User user, PlansEnum plansEnum, Set<UserRole> userRoles) {
 
