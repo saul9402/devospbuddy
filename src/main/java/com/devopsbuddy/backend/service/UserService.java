@@ -63,7 +63,7 @@ public class UserService {
 	}
 
 	@Transactional
-	public void udateUserPassword(long userId, String password) {
+	public void updateUserPassword(long userId, String password) {
 		password = passwordEncoder.encode(password);
 		userRepository.updateUserPassword(userId, password);
 		LOG.debug("La contraseña a sido cambiada exitosamene para el usuario con id {}", userId);
