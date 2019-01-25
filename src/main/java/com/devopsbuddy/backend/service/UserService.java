@@ -14,6 +14,7 @@ import com.devopsbuddy.backend.persistence.repositories.PlanRepository;
 import com.devopsbuddy.backend.persistence.repositories.RoleRepository;
 import com.devopsbuddy.backend.persistence.repositories.UserRepository;
 import com.devopsbuddy.enums.PlansEnum;
+import com.devopsbuddy.web.controllers.ContactController;
 
 @Service
 //se utiliza como buena practica para mejorar el performance de la aplicacion y evitar logs de más
@@ -32,7 +33,9 @@ public class UserService {
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
 
-	//por defecto activa lectura y escritura de este metodo
+	private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(UserService.class);
+
+	// por defecto activa lectura y escritura de este metodo
 	@Transactional
 	public User createUser(User user, PlansEnum plansEnum, Set<UserRole> userRoles) {
 
@@ -57,6 +60,13 @@ public class UserService {
 
 		return user;
 
+	}
+
+	@Transactional
+	public void udateUserPassword(long userId, String password) {
+		password = passwordEncoder.encode(password);
+		userRepository.updateUserPassword(userId, password);
+		LOG.debug("La contraseña a sido cambiada exitosamene para el usuario con id {}", userId);
 	}
 
 }

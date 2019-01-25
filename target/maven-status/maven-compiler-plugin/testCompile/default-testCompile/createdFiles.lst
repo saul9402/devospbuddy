@@ -1,0 +1,3 @@
+com\devopsbuddy\DevopsbuddyApplicationTests.class
+com\devopsbuddy\test\integration\RepositoriesIntegration.class
+com\devopsbuddy\test\integration\UserServiceIntegrationTest.class

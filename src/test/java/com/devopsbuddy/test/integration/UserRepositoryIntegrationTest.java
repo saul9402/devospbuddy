@@ -1,9 +1,11 @@
 package com.devopsbuddy.test.integration;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Set;
+import java.util.UUID;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -21,7 +23,7 @@ import com.devopsbuddy.enums.PlansEnum;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = DevopsbuddyApplication.class)
-public class UserIntegrationTest extends AbstractInegrationTest {
+public class UserRepositoryIntegrationTest extends AbstractInegrationTest {
 
 	@Rule
 	public TestName testName = new TestName();
@@ -65,6 +67,31 @@ public class UserIntegrationTest extends AbstractInegrationTest {
 		String email = testName.getMethodName() + "@devospbuddy.com";
 		User basicUser = createUser(username, email);
 		userRepository.delete(basicUser.getId());
+	}
+
+	@Test
+	public void testGetUserByEmail() {
+		User user = createUser(testName);
+
+		User newlyFoundUser = userRepository.findByEmail(user.getEmail());
+		assertNotNull(newlyFoundUser);
+		assertNotNull(newlyFoundUser.getId());
+
+	}
+
+	@Test
+	public void testUpdateUserPassword() {
+		User user = createUser(testName);
+
+		assertNotNull(user);
+		assertNotNull(user.getId());
+
+		String newPassword = UUID.randomUUID().toString();
+
+		userRepository.updateUserPassword(user.getId(), newPassword);
+		user = userRepository.findOne(user.getId());
+
+		assertEquals(newPassword, user.getPassword());
 	}
 
 }
