@@ -64,12 +64,23 @@ public class User implements Serializable, UserDetails {
 
 	private boolean enabled;
 
+	// muchos usuarios que pueden tener un Plan
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "plan_id")
 	private Plan plan;
 
+	// un usuario que puede tener muchos userRoles
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Set<UserRole> userRoles = new HashSet<>();
+
+	// un usuario que puede tener muchos tokens
+	/*
+	 * cascade=ALL; si se borra un usuario queremos que se borren todos sus tokens
+	 */
+	// mappedBy para indicar cual es la propiedad en la entidad PasswordRsetToken
+	// que hará el join
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+	private Set<PasswordResetToken> passwordResetTokens = new HashSet<PasswordResetToken>();
 
 	public long getId() {
 		return id;
@@ -77,6 +88,14 @@ public class User implements Serializable, UserDetails {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public Set<PasswordResetToken> getPasswordResetTokens() {
+		return passwordResetTokens;
+	}
+
+	public void setPasswordResetTokens(Set<PasswordResetToken> passwordResetTokens) {
+		this.passwordResetTokens = passwordResetTokens;
 	}
 
 	public String getUsername() {

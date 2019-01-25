@@ -39,6 +39,7 @@ public class PasswordResetToken implements Serializable {
 	private String token;
 
 	@ManyToOne(fetch = FetchType.EAGER)
+	// se pone aqui ya que será llave foranea de la entidad User
 	@JoinColumn(name = "user_id")
 	private User user;
 
@@ -48,7 +49,6 @@ public class PasswordResetToken implements Serializable {
 
 	public PasswordResetToken() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public PasswordResetToken(String token, User user, LocalDateTime creationDateTime, int expirationMinutes) {
