@@ -118,7 +118,7 @@ public class PasswordIntegrationTest extends AbstractInegrationTest {
 		User user = createUser(testName);
 
 		LocalDateTime now = LocalDateTime.now(Clock.systemUTC());
-		String toke	n1 = UUID.randomUUID().toString();
+		String token1 = UUID.randomUUID().toString();
 		String token2 = UUID.randomUUID().toString();
 		String token3 = UUID.randomUUID().toString();
 
