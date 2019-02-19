@@ -12,12 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.UniqueConstraint;
-
-import org.h2.command.ddl.CreateAggregate;
 
 import com.devopsbuddy.backend.persistence.converter.LocalDateTimeAttributeConverter;
-import com.devopsbuddy.web.controllers.ContactController;
 
 @Entity
 public class PasswordResetToken implements Serializable {

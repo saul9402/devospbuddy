@@ -13,7 +13,6 @@ import com.devopsbuddy.backend.persistence.domain.backend.PasswordResetToken;
 import com.devopsbuddy.backend.persistence.domain.backend.User;
 import com.devopsbuddy.backend.persistence.repositories.PasswordResetTokenRepository;
 import com.devopsbuddy.backend.persistence.repositories.UserRepository;
-import com.devopsbuddy.web.controllers.ContactController;
 
 @Service
 @Transactional(readOnly = true)

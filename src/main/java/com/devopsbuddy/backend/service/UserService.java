@@ -14,7 +14,6 @@ import com.devopsbuddy.backend.persistence.repositories.PlanRepository;
 import com.devopsbuddy.backend.persistence.repositories.RoleRepository;
 import com.devopsbuddy.backend.persistence.repositories.UserRepository;
 import com.devopsbuddy.enums.PlansEnum;
-import com.devopsbuddy.web.controllers.ContactController;
 
 @Service
 //se utiliza como buena practica para mejorar el performance de la aplicacion y evitar logs de más
