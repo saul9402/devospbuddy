@@ -68,4 +68,12 @@ public class UserService {
 		LOG.debug("La contraseña a sido cambiada exitosamene para el usuario con id {}", userId);
 	}
 
+	public User findByUserName(String username) {
+		return userRepository.findByUsername(username);
+	}
+
+	public User findByEmail(String email) {
+		return userRepository.findByEmail(email);
+	}
+
 }
