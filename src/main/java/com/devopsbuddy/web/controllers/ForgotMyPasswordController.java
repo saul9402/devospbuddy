@@ -150,7 +150,7 @@ public class ForgotMyPasswordController {
 		if (null == authentication) {
 			LOG.error("Alguien si autenticacion trató de entrar al metodo");
 			model.addAttribute(PASSWORD_RESET_ATRIBUTE_NAME, "false");
-			model.addAttribute(MESSAGE_ATTRIBUTE_NAME, "No ests autorizado para esto");
+			model.addAttribute(MESSAGE_ATTRIBUTE_NAME, "No estas autorizado para esto");
 			return CHANGE_PASSWORD_VIEW_NAME;
 		}
 
