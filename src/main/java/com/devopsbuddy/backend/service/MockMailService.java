@@ -1,7 +1,6 @@
 package com.devopsbuddy.backend.service;
 
 import org.springframework.mail.SimpleMailMessage;
-import org.springframework.stereotype.Service;
 
 public class MockMailService extends AbstractEmailService {
 
