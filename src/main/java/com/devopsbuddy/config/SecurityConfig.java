@@ -16,6 +16,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.devopsbuddy.backend.service.UserSecurityService;
 import com.devopsbuddy.web.controllers.ForgotMyPasswordController;
+import com.devopsbuddy.web.controllers.SignupController;
 
 @Configuration
 @EnableWebSecurity
@@ -37,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	/** Public URLs. */
 	private static final String[] PUBLIC_MATCHERS = { "/webjars/**", "/css/**", "/js/**", "/images/**", "/",
 			"/about/**", "/contact/**", "/error/**/*", "/console/**",
-			ForgotMyPasswordController.FORGOT_PASSWORD_URL_MAPPING, ForgotMyPasswordController.CHANGE_PASSWORD_PATH };
+			ForgotMyPasswordController.FORGOT_PASSWORD_URL_MAPPING, ForgotMyPasswordController.CHANGE_PASSWORD_PATH, SignupController.SIGNUP_URL_MAPPING};
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {

@@ -14,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.devopsbuddy.backend.persistence.domain.backend.Role;
 import com.devopsbuddy.backend.persistence.domain.backend.User;
 import com.devopsbuddy.backend.persistence.domain.backend.UserRole;
+import com.devopsbuddy.backend.service.PlanService;
 import com.devopsbuddy.backend.service.UserService;
 import com.devopsbuddy.enums.PlansEnum;
 import com.devopsbuddy.enums.RolesEnum;
@@ -27,6 +28,9 @@ public class DevopsbuddyApplication implements CommandLineRunner {
 
 	@Autowired
 	UserService userService;
+
+	@Autowired
+	PlanService planService;
 
 	@Value("${webmaster.username}")
 	private String webmasterUsername;
@@ -43,6 +47,11 @@ public class DevopsbuddyApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		
+		//se aegura de que los planes pro y basico existan 
+		LOG.info("Creando los planes Basico y Pro en la base de datos");
+		planService.createPlan(PlansEnum.BASIC.getId());
+		planService.createPlan(PlansEnum.PRO.getId());
 
 		User user = UserUtils.createBasicUser(webmasterUsername, webmasterEmail);
 		user.setPassword(webmasterPassword);
