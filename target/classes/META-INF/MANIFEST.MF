@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: devopsbuddy
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: Cristopher Cerrillo
+Built-By: saul_
 Implementation-Vendor-Id: com.devopsbuddy
-Build-Jdk: 1.8.0_192
+Build-Jdk: 1.8.0_201
 Implementation-URL: http://projects.spring.io/spring-boot/devopsbuddy/
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.

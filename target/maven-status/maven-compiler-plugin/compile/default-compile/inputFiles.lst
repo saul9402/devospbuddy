@@ -1,30 +1,35 @@
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\enums\RolesEnum.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\domain\backend\Plan.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\web\controllers\PayloadController.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\repositories\UserRepository.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\repositories\RoleRepository.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\web\i18n\I18NService.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\backend\service\SmtpService.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\web\controllers\ContactController.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\config\DevelopmentConfig.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\config\SecurityConfig.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\domain\backend\User.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\backend\service\EmailService.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\web\controllers\CopyController.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\config\I18NConfig.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\DevopsbuddyApplication.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\web\controllers\IndexController.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\web\controllers\LoginController.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\config\ProductionConfig.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\domain\backend\Role.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\utils\UserUtils.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\web\domain\frontend\FeedBackPojo.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\repositories\PlanRepository.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\domain\backend\Authority.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\backend\service\UserService.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\domain\backend\UserRole.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\enums\PlansEnum.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\backend\service\MockMailService.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\backend\service\UserSecurityService.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\config\ApplicationConfiguration.java
-C:\Users\Cristopher Cerrillo\git\devospbuddy\src\main\java\com\devopsbuddy\backend\service\AbstractEmailService.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\domain\backend\Role.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\repositories\PlanRepository.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\enums\RolesEnum.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\repositories\PasswordResetTokenRepository.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\web\controllers\LoginController.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\service\AbstractEmailService.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\config\ApplicationConfiguration.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\enums\PlansEnum.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\web\controllers\ContactController.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\config\ProductionConfig.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\config\DevelopmentConfig.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\DevopsbuddyApplication.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\web\controllers\PayloadController.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\service\MockMailService.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\service\I18NService.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\web\controllers\ForgotMyPasswordController.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\config\SecurityConfig.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\domain\backend\Authority.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\repositories\UserRepository.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\utils\UserUtils.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\config\I18NConfig.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\domain\backend\PasswordResetToken.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\domain\backend\User.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\service\SmtpService.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\web\controllers\CopyController.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\web\domain\frontend\FeedBackPojo.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\domain\backend\Plan.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\web\controllers\IndexController.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\service\EmailService.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\domain\backend\UserRole.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\service\UserSecurityService.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\service\UserService.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\service\PasswordResetTokenService.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\repositories\RoleRepository.java
+C:\Users\saul_\git\devospbuddy\src\main\java\com\devopsbuddy\backend\persistence\converter\LocalDateTimeAttributeConverter.java

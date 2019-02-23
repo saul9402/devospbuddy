@@ -10,7 +10,7 @@
 	<packaging>jar</packaging>
 
 	<name>devopsbuddy</name>
-	<description>Startup ready web skelerton</description>
+	<description>Startup ready web skeleston</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
