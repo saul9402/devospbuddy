@@ -20,12 +20,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.devopsbuddy.backend.persistence.domain.backend.Plan;
 import com.devopsbuddy.backend.persistence.domain.backend.Role;
 import com.devopsbuddy.backend.persistence.domain.backend.User;
 import com.devopsbuddy.backend.persistence.domain.backend.UserRole;
 import com.devopsbuddy.backend.service.PlanService;
+import com.devopsbuddy.backend.service.S3Service;
 import com.devopsbuddy.backend.service.UserService;
 import com.devopsbuddy.enums.PlansEnum;
 import com.devopsbuddy.enums.RolesEnum;
@@ -43,6 +45,9 @@ public class SignupController {
 
 	@Autowired
 	private UserService userService;
+
+	@Autowired
+	private S3Service s3Service;
 
 	/** The application logger */
 
@@ -73,7 +78,8 @@ public class SignupController {
 
 	@RequestMapping(value = SIGNUP_URL_MAPPING, method = RequestMethod.POST)
 	public String signUpPost(@RequestParam(name = "planId", required = true) int planId,
-			@ModelAttribute(PAYLOAD_MODEL_KEY_NAME) @Valid  ProAccountPayload payload, ModelMap model)
+			@RequestParam(name = "file", required = false) MultipartFile file,
+			@ModelAttribute(PAYLOAD_MODEL_KEY_NAME) @Valid ProAccountPayload payload, ModelMap model)
 			throws IOException {
 
 		if (planId != PlansEnum.BASIC.getId() && planId != PlansEnum.PRO.getId()) {
@@ -112,6 +118,19 @@ public class SignupController {
 		// plans and roles
 		LOG.debug("Transforming user payload into User domain object");
 		User user = UserUtils.fromWebUserToDomainUser(payload);
+
+		// Stores the profile image on Amazon S3 and stores the URL in the user's record
+		if (file != null && !file.isEmpty()) {
+
+			String profileImageUrl = s3Service.storeProfileImage(file, payload.getUsername());
+			if (profileImageUrl != null) {
+				user.setProfileImageUrl(profileImageUrl);
+			} else {
+				LOG.warn("There was a problem uploading the profile image to S3. The user's profile will"
+						+ " be created without the image");
+			}
+
+		}
 
 		// Sets the Plan and the Roles (depending on the chosen plan)
 		LOG.debug("Retrieving plan from the database");

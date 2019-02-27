@@ -11,7 +11,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
-			
+
 				<div th:if="${signedUp != null}">
 					<div th:if="${signedUp == 'true'}"
 						class="alert alert-success alert-dismissible" role="alert">
@@ -33,7 +33,7 @@
 
 				<div class="well">
 
-<!-- 					Con esto obtienes el valor que se haya pasado en la variable planId para saber que mensaje se debe mostrar -->
+					<!-- 					Con esto obtienes el valor que se haya pasado en la variable planId para saber que mensaje se debe mostrar -->
 
 					<h1 th:if="${#httpServletRequest.getParameter('planId') == '1'}"
 						th:text="#{signup.h1.basic.profile}"></h1>
@@ -42,11 +42,11 @@
 					<p class="lead">Please fill in the form to subscribe to DevOps
 						Buddy!</p>
 
-<!-- 					Con esto obtienes el valor de la variable PAYLOAD_MODEL_KEY_NAME definida en el controlador -->
+					<!-- 					Con esto obtienes el valor de la variable PAYLOAD_MODEL_KEY_NAME definida en el controlador -->
 					<form id="signupForm" th:action="@{/signup}"
 						th:object="${__${T(com.devopsbuddy.web.controllers.SignupController).PAYLOAD_MODEL_KEY_NAME}__}"
 						method="post" class="text-left" enctype="multipart/form-data">
-<!-- 						Se define el enctype como multipart/form-data para cuando subamos las imagenes -->
+						<!-- 						Se define el enctype como multipart/form-data para cuando subamos las imagenes -->
 
 						<!-- Hidden field for the POST request -->
 						<div th:if="${param.containsKey('planId')}">
@@ -111,6 +111,10 @@
 							<label for="description" th:text="#{signup.form.description}"></label>
 							<textarea type="text" id="description" th:field="*{description}"
 								class="form-control" rows="4" />
+						</div>
+						<div class="form-group">
+							<label for="file" th:text="#{signup.form.profile.image.url}"></label>
+							<input type="file" id="file" name="file" class="form-control" />
 						</div>
 
 						<div class="form-group">

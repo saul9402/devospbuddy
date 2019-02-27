@@ -10,7 +10,7 @@
 	<packaging>jar</packaging>
 
 	<name>devopsbuddy</name>
-	<description>Startup ready web skelerton</description>
+	<description>Startup ready web skeleston</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -88,6 +88,23 @@
 			<artifactId>jquery</artifactId>
 			<version>3.3.1</version>
 		</dependency>
+		
+		
+		<!-- AWS dependencies -->
+<!-- 		Servirá para utilizar los servicios de amazon programaticamente -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>LATEST</version>
+		</dependency>
+
+		<!-- Commons dependencies -->
+<!-- 		Servira para extraer la extensión del archivo -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>LATEST</version>
+</dependency>
 
 		<!--Test dependencies -->
 		<dependency>
