@@ -3,7 +3,6 @@ package com.devopsbuddy.backend.service;
 import org.springframework.stereotype.Service;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.GroupGrantee;
 import com.amazonaws.services.s3.model.Permission;
@@ -98,9 +97,8 @@ public class S3Service {
     private String ensureBucketExists(String bucketName) {
 
         String bucketUrl = null;
-
         try {
-            if (!s3Client.doesBucketExist(bucketName)) {
+            if (!s3Client.doesBucketExistV2(bucketName)) {
                 LOG.info("Bucket {} doesn't exists...Creating one");
                 s3Client.createBucket(bucketName);
                 LOG.info("Created bucket: {}", bucketName);
