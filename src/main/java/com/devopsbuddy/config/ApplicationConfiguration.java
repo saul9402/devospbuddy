@@ -20,6 +20,7 @@ import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 //habilita @Transactional correctamente
 @EnableTransactionManagement
 @PropertySource("file:///${user.home}/devopsbuddy/application-common.properties")
+@PropertySource("file:///${user.home}/devopsbuddy/stripe.properties")
 public class ApplicationConfiguration {
 
 	@Value("${aws.s3.profile}")
