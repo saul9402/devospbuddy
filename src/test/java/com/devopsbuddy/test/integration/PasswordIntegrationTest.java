@@ -108,7 +108,7 @@ public class PasswordIntegrationTest extends AbstractInegrationTest {
 
 		userRepository.delete(user.getId());
 
-		Set<PasswordResetToken> shouldBeEmpty = passwordResetTokenRepository.finAllByUserId(user.getId());
+		Set<PasswordResetToken> shouldBeEmpty = passwordResetTokenRepository.findAllByUserId(user.getId());
 		assertTrue(shouldBeEmpty.isEmpty());
 	}
 
@@ -132,7 +132,7 @@ public class PasswordIntegrationTest extends AbstractInegrationTest {
 
 		User foundUser = userRepository.findOne(user.getId());
 
-		Set<PasswordResetToken> actualTokens = passwordResetTokenRepository.finAllByUserId(foundUser.getId());
+		Set<PasswordResetToken> actualTokens = passwordResetTokenRepository.findAllByUserId(foundUser.getId());
 		assertTrue(actualTokens.size() == tokens.size());
 		List<String> tokensAsList = tokens.stream().map(ptr -> ptr.getToken()).sorted().collect(Collectors.toList());
 		List<String> actualTokensAsList = actualTokens.stream().map(ptr -> ptr.getToken()).sorted()
