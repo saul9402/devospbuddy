@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: prod
+    
+default:
+  to:
+    address: saul_harry_@hotmail.com
+
+token:
+  expiration:
+    length:
+      minutes: 120
